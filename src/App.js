@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import io from "socket.io-client";
 
-const backendURL = "https://chat-backend-ym7f.onrender.com";
+const backendURL = "https://chat-backend-1-hx1g.onrender.com";
 
 function App() {
   const [username, setUsername] = useState("");
