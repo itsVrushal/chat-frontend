@@ -7,13 +7,14 @@ export default function Register() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const [username, setUsername] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
 
     try {
-      await api.post("/auth/register", { email, password });
+      await api.post("/auth/register", { username, email, password });
       navigate("/login");
     } catch (err) {
       setError(err.response?.data?.message || "Registration failed");
@@ -26,6 +27,14 @@ export default function Register() {
       {error && <p className="error">{error}</p>}
 
       <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          required
+        />
+
         <input
           type="email"
           placeholder="Email"

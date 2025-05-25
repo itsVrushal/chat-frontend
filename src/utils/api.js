@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://chat-backend-1-hx1g.onrender.com"; // Replace with your backend URL
+const API_URL = "https://chat-backend-1-hx1g.onrender.com/api"; // Replace with your backend URL
 
 const api = axios.create({
   baseURL: API_URL,
